@@ -1,6 +1,6 @@
 # ts_practice2
 
-#### 環境構築 React with 
+#### 環境構築 React with TypeScript
 `$ npx create-react-app プロジェクト名 --template typescript`</br>
 $ npm start を実行するとTypeScriptとJSXがJavaScriptにコンパイルされる</br>
 
