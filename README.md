@@ -69,7 +69,13 @@ webpack.config.js内にdevtool: 'inline-source-map'を追加する。<br/>
 package.jsonのscripts内に "build":  "webpack"と記述する。<br/>
 "start":  "webpack-dev-server"<br/>
 mode: 'development'を追加することで、分かりやすいエラーメッセージになる。<br/>
-
+`mode:  'development'`       <br/>
+`enrty: {}`                  <br/>
+`output:  {`                 <br/>
+    `filename:`              <br/>
+    `path:`                  <br/>
+    `publicPath: 'dist',`    <br/>
+`}`
 
 
 
