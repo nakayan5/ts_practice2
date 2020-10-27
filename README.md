@@ -43,25 +43,25 @@ pathは出力先のフォルダ名でtsconfig.jsonのoutFileと同じにする�
 requireはNode.jsでモジュールもimportするための構文。
 'path'というモジュールはパッケージとしてインストールする必要はない。なぜならNode.jsのコアモジュールだから。
 testはwebpackが見つけた全てのファイルに対して実行されるファイル名のテスト。このルールを適用するかどうかをファイル名でチェックする。tsで終わる拡張子のファイルはts-loaderを使う。
-`const  path = require('path')
-module.exports  =  {
-    entry:  './src/app.ts',
-    output:  {
-        filename:  ' bundle.js'
-        path:  path.resolve(__dirname,  'dist'),
-    },
-    module: {
-        rules: [
-            {
-                test: /\.ts?/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            }        
-        ]
-    },
-    resolve: {
+`const  path = require('path') <br/>
+module.exports  =  { <br/>
+    entry:  './src/app.ts', <br/>
+    output:  { <br/>
+        filename:  ' bundle.js' <br/>
+        path:  path.resolve(__dirname,  'dist'), <br/>
+    }, <br/>
+    module: { <br/>
+        rules: [ <br/>
+            { <br/>
+                test: /\.ts?/, <br/>
+                use: 'ts-loader', <br/>
+                exclude: /node_modules/ <br/>
+            }        <br/>
+        ] <br/>
+    }, <br/>
+    resolve: { <br/>
         
-    }
+    } <br/>
 }`
 
 
