@@ -1,12 +1,12 @@
 # ts_practice2
 
-### TypeScriptとは
+## TypeScriptとは
 ・JavaScriptの上位互換</br>
 ・JavaScriptの仕様をベースに拡張したプログラミング言語</br>
 ・新しい機能と利便性をJavaScriptに追加</br>
 ・ブラウザでもNode.jsでも直接実行できない</br>
 
-### 環境構築
+## 環境構築
 インストール</br>
 `$ npm install -g typescript`</br>
 `$ npm init`</br>
@@ -19,10 +19,10 @@
 => tsconfig.jsonが作成される</br>
 TypeScriptがJavaScriptにどのようにコンパイルされるかを設定するファイル
 
-### WebpackとTypeScript
+## WebpackとTypeScript
 Webpackとはモジュールバンドラおよびビルドツール<br/>
 
-#### Webpack のインストール & 重要な依存パッケージ
+### Webpack のインストール & 重要な依存パッケージ
 `$ npm  install --save-dev  webpack  webpack-cli  webpack-dev-server  typescript  ts-loader`<br/>
 ・webpack<br/>
 = 複数のファイルをまとめることができ、かつコードを変換できる<br/>
@@ -37,7 +37,38 @@ Webpackとはモジュールバンドラおよびビルドツール<br/>
 = webpckがTypeScriptをJavaScriptに変換するために必要<br/>
 = コンパイルできる
 
-### 環境構築 React with TypeScript
+### エントリポイントと出力設定
+tsconfig.jsonと同階層にwebpack.config.jsを作成。filenameは自由に決めることができる。
+pathは出力先のフォルダ名でtsconfig.jsonのoutFileと同じにする必要がある。ただし、相対パスではなく絶対パスで記述する。
+requireはNode.jsでモジュールもimportするための構文。
+'path'というモジュールはパッケージとしてインストールする必要はない。なぜならNode.jsのコアモジュールだから。
+testはwebpackが見つけた全てのファイルに対して実行されるファイル名のテスト。このルールを適用するかどうかをファイル名でチェックする。tsで終わる拡張子のファイルはts-loaderを使う。
+`const  path = require('path')
+module.exports  =  {
+    entry:  './src/app.ts',
+    output:  {
+        filename:  ' bundle.js'
+        path:  path.resolve(__dirname,  'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.ts?/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }        
+        ]
+    },
+    resolve: {
+        
+    }
+}`
+
+
+
+
+
+## 環境構築 React with TypeScript
 `$ npx create-react-app プロジェクト名 --template typescript`</br>
 $ npm start を実行するとTypeScriptとJSXがJavaScriptにコンパイルされる</br>
 
