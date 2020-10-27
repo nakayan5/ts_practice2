@@ -74,7 +74,7 @@ mode: 'development'を追加することで、分かりやすいエラーメッ�
 `output:  {`                 <br/>
     `filename:`              <br/>
     `path:`                  <br/>
-    `publicPath: 'dist',`    <br/>
+    `publicPath: '_dist_',`    <br/>
 `}`
 
 
