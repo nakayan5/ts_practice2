@@ -42,27 +42,25 @@ tsconfig.jsonと同階層にwebpack.config.jsを作成。filenameは自由に決
 pathは出力先のフォルダ名でtsconfig.jsonのoutFileと同じにする必要がある。ただし、相対パスではなく絶対パスで記述する。
 requireはNode.jsでモジュールもimportするための構文。
 'path'というモジュールはパッケージとしてインストールする必要はない。なぜならNode.jsのコアモジュールだから。
-testはwebpackが見つけた全てのファイルに対して実行されるファイル名のテスト。このルールを適用するかどうかをファイル名でチェックする。tsで終わる拡張子のファイルはts-loaderを使う。
-`const  path = require('path') <br/>
-module.exports  =  { <br/>
-    entry:  './src/app.ts', <br/>
-    output:  { <br/>
-        filename:  ' bundle.js' <br/>
-        path:  path.resolve(__dirname,  'dist'), <br/>
-    }, <br/>
-    module: { <br/>
-        rules: [ <br/>
-            { <br/>
-                test: /\.ts?/, <br/>
-                use: 'ts-loader', <br/>
-                exclude: /node_modules/ <br/>
-            }        <br/>
-        ] <br/>
-    }, <br/>
-    resolve: { <br/>
-        
-    } <br/>
-}`
+testはwebpackが見つけた全てのファイルに対して実行されるファイル名のテスト。このルールを適用するかどうかをファイル名でチェックする。tsで終わる拡張子のファイルはts-loaderを使う。<br/>
+`const  pth = require('path')`                  <br/>
+`module.exports  =  {`                          <br/>
+    `entry:  './src/app.ts',`                     <br/>
+    `output: {`                                  <br/>
+        `filename: 'bundle.js'`                  <br/>
+        `path:  path.resolve(__dirname, 'dist')`  <br/>
+    `},`                                          <br/>
+    `module: {`                                   <br/>
+        `rules: [`                                <br/>
+            `{`                                   <br/>
+               `test: /\.ts?/,`                   <br/>
+               `use: 'ts-loader',`                <br/>
+               `exclude: /node_modules/`          <br/>
+            `}`                                   <br/>
+        `]`                                        <br/>
+    `},`                                           <br/>
+    `resolve: {}`                                  <br/>
+`}`
 
 
 
