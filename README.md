@@ -45,7 +45,7 @@ requireはNode.jsでモジュールもimportするための構文。
 testはwebpackが見つけた全てのファイルに対して実行されるファイル名のテスト。このルールを適用するかどうかをファイル名でチェックする。tsで終わる拡張子のファイルはts-loaderを使う。<br/>
 `const  pth = require('path')`                  <br/>
 `module.exports  =  {`                          <br/>
-    `entry:  './src/app.ts',`                     <br/>
+   &emsp `entry:  './src/app.ts',`                     <br/>
     `output: {`                                  <br/>
         `filename: 'bundle.js'`                  <br/>
         `path:  path.resolve(__dirname, 'dist')`  <br/>
