@@ -91,7 +91,7 @@ mode: 'development'を追加することで、分かりやすいエラーメッ�
 
 ### ■本番用のワークフロー設定
 webpack.config.prod.jsファイルを作成。<br/>
-npm install --save-dev clean-webpack-plugin。<br/>
+`npm install --save-dev clean-webpack-plugin`  
 "build": "webpack --config webpack.config.prod.js"に変更。<br/>
 
 
